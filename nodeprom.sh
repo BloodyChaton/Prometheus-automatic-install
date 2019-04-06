@@ -17,4 +17,9 @@ WantedBy=default.target" > node_exporter.service
 
 systemctl daemon-reload
 systemctl start node_exporter
-systemctl enable node_exporter 
+systemctl enable node_exporter
+
+echo " - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['localhost:9100']" >> /home/prometheus/prometheus/prometheus.yml
+systemctl restart prometheus 
