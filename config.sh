@@ -22,3 +22,6 @@ systemctl daemon-reload
 systemctl start prometheus
 systemctl enable prometheus
 systemctl status prometheus
+
+firewall-cmd --add-port=9090/tcp --permanent
+firewall-cmd --reload
