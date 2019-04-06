@@ -18,3 +18,7 @@ ExecStart=/home/prometheus/prometheus/prometheus \
 
 [Install]
 WantedBy=multi-user.target" > prometheus.service
+systemctl daemon-reload
+systemctl start prometheus
+systemctl enable prometheus
+systemctl status prometheus
